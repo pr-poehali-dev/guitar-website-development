@@ -158,24 +158,7 @@ export default function Index() {
           ))}
         </div>
 
-        <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/30">
-          <CardContent className="py-12 text-center">
-            <h2 className="text-4xl font-oswald mb-4">ВЫБЕРИ СВОЮ ГИТАРУ</h2>
-            <p className="text-muted-foreground text-lg mb-6">
-              Каждая гитара имеет свой уникальный характер и звучание
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <Icon name="Guitar" className="mr-2" size={20} />
-                Подобрать гитару
-              </Button>
-              <Button size="lg" variant="outline" className="border-secondary hover:border-secondary hover:bg-secondary/10">
-                <Icon name="Headphones" className="mr-2" size={20} />
-                Послушать примеры
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+
       </section>
 
       <footer className="border-t border-border py-8">
