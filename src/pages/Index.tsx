@@ -8,6 +8,7 @@ interface GuitarType {
   id: string;
   name: string;
   icon: string;
+  image: string;
   description: string;
   features: string[];
   history: string;
@@ -19,6 +20,7 @@ const guitarTypes: GuitarType[] = [
     id: 'bass',
     name: 'Бас-гитара',
     icon: 'Music2',
+    image: 'https://cdn.poehali.dev/projects/bb2fbfc5-7aea-4e18-88b2-a86e788a7679/files/642affbb-98f0-4d14-9226-bb426112285d.jpg',
     description: 'Низкочастотная гитара с 4-6 струнами, создающая ритмическую основу композиции.',
     features: ['4-6 струн', 'Низкий строй', 'Длинная мензура', 'Мощный звук'],
     history: 'Бас-гитара появилась в 1951 году благодаря Лео Фендеру. Precision Bass стал первой массовой моделью, революционизировавшей музыкальную индустрию.',
@@ -28,6 +30,7 @@ const guitarTypes: GuitarType[] = [
     id: 'classical',
     name: 'Классическая гитара',
     icon: 'Music',
+    image: 'https://cdn.poehali.dev/projects/bb2fbfc5-7aea-4e18-88b2-a86e788a7679/files/aa095b45-0294-4cec-b4fe-9e796e9c2a79.jpg',
     description: 'Акустическая гитара с нейлоновыми струнами, идеальная для классической музыки и фламенко.',
     features: ['Нейлоновые струны', 'Широкий гриф', 'Мягкий звук', 'Пальцевая техника'],
     history: 'Современная классическая гитара оформилась в XIX веке благодаря испанскому мастеру Антонио Торресу, установившему стандарты конструкции.',
@@ -37,6 +40,7 @@ const guitarTypes: GuitarType[] = [
     id: 'electric',
     name: 'Электро-гитара',
     icon: 'Zap',
+    image: 'https://cdn.poehali.dev/projects/bb2fbfc5-7aea-4e18-88b2-a86e788a7679/files/b8601d82-6632-4eb6-999d-85c2c718cf57.jpg',
     description: 'Гитара со звукоснимателями, создающая мощный усиленный звук для рок-музыки.',
     features: ['Звукосниматели', 'Усиление звука', 'Эффекты', 'Сустейн'],
     history: 'Первые электрогитары появились в 1930-х, но революцию совершили Fender Telecaster (1950) и Gibson Les Paul (1952), ставшие иконами рока.',
@@ -46,6 +50,7 @@ const guitarTypes: GuitarType[] = [
     id: 'acoustic',
     name: 'Акустическая гитара',
     icon: 'Music4',
+    image: 'https://cdn.poehali.dev/projects/bb2fbfc5-7aea-4e18-88b2-a86e788a7679/files/a42e1490-1a08-4298-ab63-0f31021356e1.jpg',
     description: 'Универсальная гитара со стальными струнами, идеальная для аккомпанемента и соло.',
     features: ['Стальные струны', 'Резонансный корпус', 'Яркий звук', 'Универсальность'],
     history: 'Акустические гитары со стальными струнами развились в США в начале XX века, став основой фолк и кантри музыки.',
@@ -108,6 +113,14 @@ export default function Index() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
+                <div className="relative w-full h-64 mb-4 overflow-hidden rounded-lg">
+                  <img 
+                    src={guitar.image} 
+                    alt={guitar.name}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                     <Icon name={guitar.icon as any} size={24} className="text-primary" />
